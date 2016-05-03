@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="author" contect="Jiayi Woo, jiayiwoo_cuc@outlook.com" />
+	<link rel="apple-touch-icon-precomposed" href="iphone_logo.png" />
+	<!-- retina 114*114 -->
+	<link rel="apple-touch-startup-image" href="logo_startup.png" />
+	<!-- app 启动界面 官方规定启动界面的尺寸必须为 320*640 -->
+	<title>MFIT</title>
+	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+	<script src="js/Vue.v1.0.13.js"></script>
+</head>
+<body>
+<!-- main body -->
+<div id="App">
+	<p id="page_title">
+		<h1 id="page_name"></h1>
+	</p>
+	<router-view></router-view>
+	<nav>
+		<a v-link="{ path: '/dailySign'}">打卡</a>
+		<a v-link="{ path: '/conditionShow'}">肌群</a>
+		<a v-link="{ path: ''}">计划</a>
+		<a v-link="{ path: ''}">我</a>
+	</nav>
+</div>
+<!-- /main body -->
+<!-- Page Commit Plan -->
+	<div id="DailySign">
+		<div id="encourage">
+			<img src="" alt="" class="encourage_pic">
+			<p class="encourage_verse"></p>
+		</div>
+		<!-- 今日已做动作list  Dom从子页的done()添加  -->
+		<div id="didList">
+			<h1 class="didList_tit">今日记录</h1>
+			<ul id="done_list">
+				<li class="done_item">
+					<p class="item_info">
+						<img src="" alt="" class="plan_icon">
+						<h2 class="plan_name">臀部塑形计划</h2>
+					</p>
+				</li>
+			</ul>
+		</div>
+
+		<div id="today_plan">
+			<div class="plan_item">
+				<img src="" alt="" class="plan_img">
+				<span class="today_plan_name">柔韧训练组合</span>
+			</div>
+		</div>
+	</div>
+<!-- /Page Commit Plan -->
+
+<!-- #Condition show -->
+	<div id="ConditionShow">
+		<div class="muscleBoard"></div>
+
+		<div class="muscle_info">
+			<h1 class="muscle_part_name">{{上臂肌群}}</h1>
+			<div class="tips_board">
+				<p class="tips">
+				{{上臂（Upper Arm）的围度取决于肱二头肌和肱三头肌的发达程度。}}
+				</p>
+			</div>
+			<div class="achiv">
+				<div class="achiv_item">
+					<h3 class="achiv_name">{{肌肉数量}}</h3>
+					<h4 class="achiv_cont"></h4>
+					<h5 class="achiv_reason"></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- /muscle show -->
+
+<!-- user page -->
+	<div id="UserPage">
+		<div id="user_board">
+			<img src="" alt="" class="user_portrait">
+			<span class="user_name">{{无所谓}}</span>
+			<span class="user_address">{{北京朝阳}}</span>
+			<div class="att_board">
+				<p><span id="follow_count">122</span><span>关注</span></p>
+				<p><span id="fans_count"></span><span>粉丝</span></p>
+			</div>
+		</div>
+
+		<ul class="user_nav">
+			<li class="nav_item"><span class="this_count">122</span><span class="nav_item_name">记录</span></li>
+			<li class="nav_item"><span class="this_count">27</span><span class="nav_item_name">成就</span></li>
+		</ul>
+	</div>
+<!-- /user page -->
+<!-- user option -->
+
+<!-- /user option -->
+	<div id="app">
+	  {{ message }}
+	</div>
+
+	<script src="js/function.js"></script>
+</body>
+</html>
